@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felicidades!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffebf1;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Felicidades! 🎉</h1>
+    <p>Has completado todos los juegos. ¡Eres increíble!</p>
+    <button onclick="volverAlMenu()">Volver al Menú</button>
+
+    <script>
+        // Limpiar localStorage cuando se llega al mensaje final
+        localStorage.removeItem('juegosCompletos');
+
+        function volverAlMenu() {
+            window.location.href = "/"; // Redirige al menú principal
+        }
+    </script>
+</body>
+</html>
+{% endblock %}
